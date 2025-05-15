@@ -1,0 +1,154 @@
+Build a complete full-stack personal portfolio website using Flask (Python) as the backend framework and Jinja2 templating. The site should be responsive, modern, and image-rich. My name is Srinivasa Rao Talari, a B.Tech AI & Data Science student and a diploma holder in Computer Engineering. I'm an AIoT project leader, ML developer, and full-stack web intern with extensive achievements, awards, and projects. The portfolio should include:
+
+🔐 Site Requirements:
+Mobile-first, SEO-friendly design using Tailwind CSS or Bootstrap 5
+
+All content should be dynamically managed using Flask/Jinja2 templates
+
+Use Flask-Mail or SMTP for the contact form
+
+Implement Flask-WTF and WTForms for form validation
+
+Organize all content using proper routing structure
+
+Optional: Use SQLite or SQLAlchemy for storing project, award, and certificate data
+
+🖥️ Pages & Sections:
+🏠 Home (index.html):
+Intro banner: "Hi, I’m Srinivasa Rao 👋 | AI/ML Engineer | IoT Innovator"
+
+Background image or animated text using JS or CSS
+
+Profile photo with circular card styling
+
+CTA Buttons: Download Resume, View Projects, Contact Me
+
+Add typing effect or animated emoji transitions
+
+👨‍🎓 About (about.html):
+Brief bio, background, personal journey
+
+Education timeline:
+
+B.Tech in AI & DS – GPA 8.93 🎓
+
+Diploma in CE – GPA 89.17%
+
+SSC – GPA 9.2
+
+Skills section with icons: Python, Java, Flask, MongoDB, etc.
+
+Tools section: GitHub, VS Code, Jupyter, Colab
+
+🛠️ Projects (projects.html):
+Showcase at least 4 key projects as cards or modals with:
+
+Thumbnail image
+
+Title, date, stack badges
+
+Short description and tools used
+
+Links to GitHub/live demo (if available)
+
+Include:
+
+Smart Helmet for Coal Mine Workers (IoT + LoRa + Gas Sensors)
+
+AI-Powered Health Insurance Fraud Detection (XGBoost/SVM)
+
+Resume Builder (AI-driven suggestions)
+
+Smart Payroll System (Flask + Biometric + Analytics)
+
+🏅 Achievements (achievements.html):
+Card or timeline format
+
+Include real event photos and funding certificates
+
+Awards to feature:
+
+₹3 Lakh Funding 💰
+
+1st Place in Innovation Day 🥇
+
+Top 8 Startup Idea by MSME 🚀
+
+VIT-AP Appreciation Shield 🛡️
+
+📜 Certifications (certifications.html):
+Grid/list layout of certificate thumbnails + names + provider
+
+Include:
+
+Java (GalileoX), R (IITM), Deep Learning (Infysos)
+
+MongoDB University, HarvardX, Cisco, IBM, Google Cloud
+
+📄 Resume (resume.html):
+Embed resume.pdf directly in the browser using <embed> or <iframe>
+
+Provide a Download Resume button
+
+📬 Contact (contact.html):
+Flask-WTForm: name, email, message
+
+Flask-Mail or SMTP integration to send to srininvast20@gmail.com
+
+Show confirmation message on success
+
+Add social media links (LinkedIn, GitHub, Email)
+
+📸 Gallery (gallery.html) [Optional]:
+Grid layout of photos from:
+
+Hackathons
+
+Project Demos
+
+Award Ceremonies
+
+Team Events
+
+🗂 Folder Structure:
+vbnet
+Copy
+Edit
+personal_portfolio/
+├── static/
+│   ├── css/         # Custom styles
+│   ├── js/          # Optional animations or effects
+│   └── images/      # profile, projects, awards, certificates
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   ├── about.html
+│   ├── projects.html
+│   ├── achievements.html
+│   ├── certifications.html
+│   ├── resume.html
+│   ├── contact.html
+│   └── gallery.html (optional)
+├── app.py
+├── forms.py
+├── config.py
+├── resume.pdf
+└── requirements.txt
+📦 Packages to Install:
+bash
+Copy
+Edit
+pip install flask flask-wtf flask-mail email-validator flask-sqlalchemy
+✅ Deliverables:
+Full working Flask app with routes, forms, and templates
+
+Dynamic loading of project & certificate images
+
+Dark/light mode (optional but desirable)
+
+Animation on scroll or hover
+
+Fully responsive on mobile
+
+Well-commented and modular code
+

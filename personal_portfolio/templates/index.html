@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content text-center text-lg-start" data-aos="fade-right">
+                <h5 class="mb-3 text-white">Hi, I'm</h5>
+                <h1 class="display-4 fw-bold mb-4 text-white">Srinivasa Rao Talari</h1>
+                <h2 class="h3 mb-4 text-white">I'm a <span class="typing-text text-primary">AI/ML Engineer</span></h2>
+                <p class="lead mb-5 text-white">Specialized in AI/ML Engineering, IoT Innovation, and Full-Stack Development, creating effective solutions for complex challenges.</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                    <a href="{{ url_for('resume') }}" class="btn btn-primary">
+                        <i class="fas fa-file-alt me-2"></i> Resume
+                    </a>
+                    <a href="{{ url_for('projects') }}" class="btn btn-outline-light">
+                        <i class="fas fa-code me-2"></i> Projects
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-light">
+                        <i class="fas fa-envelope me-2"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+                <img 
+                    src="{{ url_for('static', filename='images/pic.png') }}" 
+                    alt="Srinivasa Rao Talari" 
+                    class="img-fluid rounded-circle shadow-sm"
+                    style="max-width: 300px; object-fit: cover; width: 300px; height: 300px;"
+                >
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- About Section Preview -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">About Me</h2>
+                <p class="lead">A brief introduction to who I am and what I do</p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <p class="lead mb-4">Computer Programmer with hands-on experience in full-stack development, proficient in Java, Python, C, JavaScript, and SQL,Machine Learning,Data Science. Excels in coding, testing, and refining software applications while collaborating with development teams.</p>
+                        <p>Demonstrates a strong commitment to building reliable, user-focused solutions and robust error-free software.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <span class="badge bg-primary">Java</span>
+                            <span class="badge bg-primary">Python</span>
+                            <span class="badge bg-primary">C</span>
+                            <span class="badge bg-primary">JavaScript</span>
+                            <span class="badge bg-primary">SQL</span>
+                            <span class="badge bg-primary">Machine Learning</span>
+                            <span class="badge bg-primary">IoT</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="{{ url_for('about') }}" class="btn btn-outline-primary">
+                                Learn More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3">Education</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h5>B.Tech in AI & Data Science</h5>
+                                <p class="text-muted">Velagapudi Ramakrishna Siddhartha Engineering College, Vijayawada</p>
+                                <p><strong>GPA:</strong> 8.85</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>Diploma in Computer Engineering</h5>
+                                <p class="text-muted">Adsumlu Aswardha Narayana Muurthi & Valluripalli Venkata Rama Seshadri Rao College</p>
+                                <p><strong>GPA:</strong> 89.17%</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>Secondary School Certificate (SSC)</h5>
+                                <p class="text-muted">Padmavathi EM High School, Vidyanagar, Krosuru</p>
+                                <p><strong>GPA:</strong> 9.2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section Preview -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="lead">Some of my recent work</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in range(2) %}
+            <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% if loop.index == 1 %}https://cdn-icons-png.flaticon.com/512/2329/2329087.png{% else %}https://cdn-icons-png.flaticon.com/512/2421/2421988.png{% endif %}" 
+                                 alt="Project Icon" class="me-3" style="width: 50px; height: 50px;">
+                            <h4 class="card-title mb-0">
+                                {% if loop.index == 1 %}Health Insurance Fraud Detection{% else %}Smart Helmet for Coal Mine Workers{% endif %}
+                            </h4>
+                        </div>
+                        <p class="card-text">
+                            {% if loop.index == 1 %}
+                            AI-powered fraud detection for health insurance claims using XGBoost and SVM for advanced anomaly detection.
+                            {% else %}
+                            IoT-based safety solution for coal mine workers to detect harmful gases using Arduino, sensors, and LoRa communication.
+                            {% endif %}
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            {% if loop.index == 1 %}
+                            <span class="badge bg-primary">Python</span>
+                            <span class="badge bg-primary">ML</span>
+                            <span class="badge bg-primary">XGBoost</span>
+                            <span class="badge bg-primary">SVM</span>
+                            <span class="badge bg-primary">Hybrid</span>
+                            <span class="badge bg-primary">Dashboard</span>
+                            {% else %}
+                            <span class="badge bg-primary">Arduino</span>
+                            <span class="badge bg-primary">IoT</span>
+                            <span class="badge bg-primary">LoRa</span>
+                            <span class="badge bg-primary">Sensors</span>
+                            <span class="badge bg-primary">Dht11</span>
+                            <span class="badge bg-primary">Mq-4,mq-135</span>
+                            <span class="badge bg-primary">transmitter kit</span>
+                            <span class="badge bg-primary">Receiver Kit</span>
+                            {% endif %}
+                        </div>
+                        <a href="{{ url_for('projects') }}" class="btn btn-sm btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4" data-aos="fade-up">
+            <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                View All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Section Preview -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Key Achievements</h2>
+                <p class="lead">Recognition and awards for innovation and excellence</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4" data-aos="fade-up">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2583/2583344.png" 
+                             alt="First Place Award" class="mb-3" style="width: 60px; height: 60px;">
+                        <h4 class="card-title">First Place - Innovation Day</h4>
+                        <p class="card-text">Won 1st place for the "Smart Helmet for Coal Mine Workers" project</p>
+                        <p class="text-muted">Velagapudi Ramakrishna Siddhartha Engineering College</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1642/1642322.png" 
+                             alt="Top 8 Startup" class="mb-3" style="width: 60px; height: 60px;">
+                        <h4 class="card-title">Top 8 Startup Ideas</h4>
+                        <p class="card-text">Recognized for "Robotics for Bomb Detection and Disposal" innovation</p>
+                        <p class="text-muted">AIC ALEAP WE Hub & MSME Minister, Andhra Pradesh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3176/3176293.png" 
+                             alt="Funding Award" class="mb-3" style="width: 60px; height: 60px;">
+                        <h4 class="card-title">₹3 Lakh Funding</h4>
+                        <p class="card-text">Secured funding for AIoT-based smart helmet to monitor harmful gases</p>
+                        <p class="text-muted">Ignition Grant At RJ E-NEST, the iTBI at RVR & JC College of Engineering,Guntur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 border-0 shadow-sm text-center">
+                <div class="card-body p-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" 
+                         alt="Appreciation Award" class="mb-3" style="width: 60px; height: 60px;">
+                    <h4 class="card-title">Appreciation Award</h4>
+                    <p class="card-text">Recognized for innovative contribution at Innovation Acquisition Summit-24 (Vikas-24)</p>
+                    <p class="text-muted">VIT-AP, in collaboration with FAPSIA & NRDC</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4" data-aos="fade-up">
+            <a href="{{ url_for('achievements') }}" class="btn btn-primary">
+                View All Achievements <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section Preview -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="lead">Let's talk about your project or collaboration</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6" data-aos="fade-up">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
+                            <h4>Contact Information</h4>
+                            <p class="mb-1"><i class="fas fa-envelope me-2"></i> srininvast20@gmail.com</p>
+                            <p class="mb-1"><i class="fas fa-phone me-2"></i> +91-8341492762</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i> Bayyavaram, Andhra Pradesh</p>
+                        </div>
+                        <div class="d-grid">
+                            <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                                Send Me a Message <i class="fas fa-paper-plane ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

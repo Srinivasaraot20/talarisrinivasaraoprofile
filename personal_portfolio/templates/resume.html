@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Resume Header -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-up">
+                <h1 class="display-5 fw-bold mb-3">My Resume</h1>
+                <p class="lead">Qualifications, experience, and professional background</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resume Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="card border-0 shadow-sm mb-4" data-aos="fade-up">
+            <div class="card-body p-4">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md-8">
+                        <h2 class="mb-1">Srinivasa Rao Talari</h2>
+                        <p class="lead">AI/ML Engineer | IoT Innovator | Full-Stack Developer</p>
+                        <div class="mt-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                <a href="mailto:srininvast20@gmail.com" class="text-decoration-none">srininvast20@gmail.com</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-phone text-primary me-2"></i>
+                                <a href="tel:+918341492762" class="text-decoration-none">+91-8341492762</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                <span>Bayyavaram, Andhra Pradesh</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fab fa-linkedin text-primary me-2"></i>
+                                <a href="https://www.linkedin.com/in/srinivasa-rao-talari-a87723289/" target="_blank" class="text-decoration-none">LinkedIn Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                        <a href="https://drive.google.com/uc?export=download&id=1sGHwdkvxYXygF4rSEJK7GEZuaP6uCgKW" target="_blank" class="btn btn-primary btn-lg">
+                            <i class="fas fa-download me-2"></i>Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Sections -->
+        <div class="card border-0 shadow-sm" data-aos="fade-up">
+            <div class="card-body p-4">
+
+                <!-- Profile -->
+                <section class="mb-5">
+                    <h4 class="border-bottom pb-2">Profile</h4>
+                    <p>Computer Programmer with hands-on experience in full-stack development, proficient in Java, Python, C, JavaScript, and SQL. Excels in coding, testing, and refining software applications while collaborating with development teams. Demonstrates a strong commitment to building reliable, user-focused solutions and robust error-free software.</p>
+                </section>
+
+                <!-- Education -->
+                <section class="mb-5">
+                    <h4 class="border-bottom pb-2">Education</h4>
+                    <div class="mb-4">
+                        <h5>Velagapudi Ramakrishna Siddhartha Engineering College, Vijayawada <small class="text-muted float-end">2023 - Present</small></h5>
+                        <p>B.Tech in Artificial Intelligence and Data Science — GPA: 8.93</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5>Adsumlu ANMVVR College <small class="text-muted float-end">2020 - 2023</small></h5>
+                        <p>Diploma in Computer Engineering — 89.17%</p>
+                    </div>
+                    <div>
+                        <h5>Padmavathi EM High School, Krosuru <small class="text-muted float-end">2019 - 2020</small></h5>
+                        <p>SSC — GPA: 9.2</p>
+                    </div>
+                </section>
+
+                <!-- Experience -->
+                <section class="mb-5">
+                    <h4 class="border-bottom pb-2">Professional Experience</h4>
+                    <div>
+                        <h5>Web Developer – Coding Raja Technologies <small class="text-muted float-end">Jan 2024 - Mar 2024</small></h5>
+                        <p>Worked on responsive web apps using HTML, CSS, JavaScript, and SQL. Collaborated with development teams, tested functionalities, and ensured UI/UX consistency.</p>
+                    </div>
+                </section>
+
+                <!-- Internships -->
+                <section class="mb-5">
+                    <h4 class="border-bottom pb-2">Internships</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>AI-ML Virtual Internship</strong> – Eduskills (2023)<br>
+                            Hands-on experience with ML algorithms, data preprocessing, TensorFlow.
+                        </li>
+                        <li class="mb-3">
+                            <strong>SQL Internship</strong> – DevSkillHub (2022)<br>
+                            Focused on SQL queries, database design, and optimization.
+                        </li>
+                        <li class="mb-3">
+                            <strong>Full Stack Internship</strong> – Lineysha and Thevan (2023)<br>
+                            Built full-stack apps using Python, Django, and REST APIs.
+                        </li>
+                        <li class="mb-3">
+                            <strong>Cloud Internship</strong> – Eduskills (2022)<br>
+                            Worked on AWS & Azure services and cloud development tools.
+                        </li>
+                        <li>
+                            <strong>Web Development Internship</strong> – Coding Raja (2023)<br>
+                            Front-end and back-end development with HTML, CSS, JS.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Projects -->
+                <section class="mb-5">
+                    <h4 class="border-bottom pb-2">Key Projects</h4>
+                    <div class="mb-3">
+                        <h5>Health Insurance Fraud Detection Using ML</h5>
+                        <p>Built an ML model using XGBoost and SVM for detecting fraudulent claims. Integrated preprocessing, anomaly detection, and a real-time dashboard.</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5>Smart Helmet for Coal Mine Workers</h5>
+                        <p>IoT-based helmet with CH4, CO gas sensors, GPS, LoRa, and GSM alert system for real-time mine safety alerts and cloud monitoring.</p>
+                    </div>
+                    <div>
+                        <h5>Emotion Recognition on Multi-modal Data</h5>
+                        <p>Used image-text datasets and fused audio-text features with Attention Mechanism and CNN+LSTM for emotion classification.</p>
+                    </div>
+                </section>
+
+                <!-- Achievements -->
+                <section>
+                    <h4 class="border-bottom pb-2">Achievements</h4>
+                    <ul class="list-unstyled">
+                        <li>🏅 Academic Excellence Award – Highest GPA in Diploma Program</li>
+                        <li>🏆 Top Performer Award – Outstanding Project Leadership</li>
+                        <li>🏅 Certificate of Excellence – AIC ALEAP WE Hub Hackathon Finalist</li>
+                        <li>💰 Received ₹3 Lakhs in funding from MSME Minister for AIoT Smart Helmet project</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Contact Header -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-up">
+                <h1 class="display-5 fw-bold mb-4">Get In Touch</h1>
+                <p class="lead mb-4">Have a question or want to work together? I'd love to hear from you!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form and Information -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Information Card -->
+            <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Contact Information</h3>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5>Email</h5>
+                                <p class="mb-0"><a href="mailto:srininvast20@gmail.com" class="text-decoration-none">srininvast20@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5>Phone</h5>
+                                <p class="mb-0"><a href="tel:+918341492762" class="text-decoration-none">+91-8341492762</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5>Location</h5>
+                                <p class="mb-0">Bayyavaram, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mt-5 mb-3">Connect With Me</h4>
+                        <div class="d-flex gap-3">
+                            <a href="https://github.com/srinivasaraotalari" target="_blank" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/srinivasaraotalari" target="_blank" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:srininvast20@gmail.com" class="social-link" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h4 class="mb-3">Availability</h4>
+                            <p class="mb-0">I'm currently available for freelance work, internships, and collaboration opportunities. Feel free to reach out anytime!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form Card -->
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Send Me a Message</h3>
+                        
+                        <form method="POST" action="{{ url_for('contact') }}" class="needs-validation" novalidate>
+                            {{ form.hidden_tag() }}
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.name.id }}" class="form-label">{{ form.name.label }}</label>
+                                {{ form.name(class_="form-control" + (" is-invalid" if form.name.errors else ""), placeholder="Enter your name") }}
+                                {% if form.name.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.name.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.email.id }}" class="form-label">{{ form.email.label }}</label>
+                                {{ form.email(class_="form-control" + (" is-invalid" if form.email.errors else ""), placeholder="Enter your email") }}
+                                {% if form.email.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.subject.id }}" class="form-label">{{ form.subject.label }}</label>
+                                {{ form.subject(class_="form-control" + (" is-invalid" if form.subject.errors else ""), placeholder="Enter subject") }}
+                                {% if form.subject.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.subject.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="{{ form.message.id }}" class="form-label">{{ form.message.label }}</label>
+                                {{ form.message(class_="form-control" + (" is-invalid" if form.message.errors else ""), rows="5", placeholder="Enter your message") }}
+                                {% if form.message.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.message.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="d-grid">
+                                {{ form.submit(class_="btn btn-primary btn-lg") }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="lead">Common questions about working with me</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What types of projects do you work on?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                I specialize in AI/ML solutions, IoT applications, and full-stack web development. My expertise includes developing smart systems for safety applications, creating machine learning models for fraud detection and data analysis, and building responsive web applications using technologies like Python, Flask, Java, and JavaScript.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Are you available for freelance or contract work?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, I am available for freelance projects, contract work, and collaborations. I'm particularly interested in AI/ML projects, IoT innovations, and full-stack web development opportunities where I can utilize my technical skills and problem-solving abilities.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What is your typical project process?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                My project process typically involves: 1) Initial consultation to understand requirements and objectives, 2) Planning and scope definition, 3) Design and architecture development, 4) Implementation with regular progress updates, 5) Testing and quality assurance, 6) Deployment and handover, and 7) Ongoing support and maintenance as needed.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                How quickly do you respond to inquiries?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                I aim to respond to all inquiries within 24-48 hours. For urgent matters, please indicate this in your message's subject line, and I'll prioritize your communication. I value clear and prompt communication throughout our collaboration.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

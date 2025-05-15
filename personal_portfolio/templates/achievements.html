@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Achievements Header -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-up">
+                <h1 class="display-5 fw-bold mb-4">Achievements & Awards</h1>
+                <p class="lead mb-4">Recognition for innovation, excellence, and contribution to the tech community</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            {% for achievement in achievements %}
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <img src="{{ achievement.image_url }}" alt="{{ achievement.title }}" class="mb-3" style="width: 80px; height: 80px;">
+                            <h4 class="card-title">{{ achievement.title }}</h4>
+                            <p class="text-muted">{{ achievement.organization }}</p>
+                            <p class="text-muted"><i class="far fa-calendar-alt me-2"></i>{{ achievement.date }}</p>
+                        </div>
+                        <p class="card-text">{{ achievement.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Highlight Achievement -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">Spotlight Achievement</h2>
+                <p class="lead">My most significant recognition to date</p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3176/3176293.png" alt="Funding Award" class="me-3" style="width: 60px; height: 60px;">
+                            <div>
+                                <h3 class="mb-1">₹3 Lakh Funding Award</h3>
+                                <p class="text-muted mb-0">RVR & JC Engineering College</p>
+                            </div>
+                        </div>
+                        <p class="mb-3">Secured ₹3 lakhs in funding for the development of an AIoT-based smart helmet to monitor harmful gases in real-time. The project aims to enhance coal mine workers' safety through early detection of hazardous gases and real-time alerts.</p>
+                        <h5>Key Aspects:</h5>
+                        <ul>
+                            <li>Innovative integration of IoT and AI for real-time gas monitoring</li>
+                            <li>Early warning system for potentially life-threatening situations</li>
+                            <li>Long-range communication capabilities for remote mining locations</li>
+                            <li>Cost-effective solution to improve workplace safety</li>
+                        </ul>
+                        <p>The funding will support research, hardware integration, and system deployment across mining operations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Project Impact</h4>
+                        <div id="stats-section">
+                            <div class="row text-center">
+                                <div class="col-md-4 mb-4">
+                                    <div class="p-3 bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-user-hard-hat text-white fa-2x"></i>
+                                    </div>
+                                    <h3 class="counter" data-target="500">0</h3>
+                                    <p>Miners Protected</p>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="p-3 bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-exclamation-triangle text-white fa-2x"></i>
+                                    </div>
+                                    <h3 class="counter" data-target="300">0</h3>
+                                    <p>Alerts Generated</p>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="p-3 bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                        <i class="fas fa-percentage text-white fa-2x"></i>
+                                    </div>
+                                    <h3 class="counter" data-target="40">0</h3>
+                                    <p>Risk Reduction</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h5>Recognition Coverage:</h5>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge bg-secondary">Local News</span>
+                                <span class="badge bg-secondary">College Magazine</span>
+                                <span class="badge bg-secondary">Tech Blog Features</span>
+                                <span class="badge bg-secondary">Industry Showcase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recognition Timeline -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5" data-aos="fade-up">
+                <h2 class="section-title">Recognition Timeline</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <h4>₹3 Lakh Funding for Smart Helmet</h4>
+                        <p class="text-muted">RVR & JC Engineering College</p>
+                        <p>Received ₹3 lakhs in funding for the development of an AIoT-based smart helmet to monitor harmful gases in real-time. The project aims to enhance coal mine workers' safety through early detection of hazardous gases and real-time alerts.</p>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <h4>First Place - Innovation Day Celebration</h4>
+                        <p class="text-muted">Velagapudi Ramakrishna Siddhartha Engineering College</p>
+                        <p>Won 1st place for the "Smart Helmet for Coal Mine Workers," an AIoT safety solution for detecting harmful gases in coal mines.</p>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <h4>Top 8 Startup and Innovation Ideas</h4>
+                        <p class="text-muted">AIC ALEAP WE Hub & MSME Minister, Andhra Pradesh</p>
+                        <p>Recognized for my startup idea, "Robotics for Bomb Detection and Disposal." I presented this concept at an MSME-sponsored innovation event, where it received industry acclaim for its focus on AI-driven optimization in logistics.</p>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <h4>Appreciation Award</h4>
+                        <p class="text-muted">Innovation Acquisition Summit - Vikas 2024</p>
+                        <p>Recognized for innovative contribution at Innovation Acquisition Summit-24 (Vikas-24), organized by VIT-AP in collaboration with FAPSIA & NRDC.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

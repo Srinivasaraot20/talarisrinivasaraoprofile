@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Gallery Header -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-up">
+                <h1 class="display-5 fw-bold mb-4">Gallery</h1>
+                <p class="lead mb-4">A visual journey through my projects and achievements</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Filter -->
+<section class="py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center" data-aos="fade-up">
+                <div class="mb-4">
+                    <button class="btn btn-sm btn-outline-primary me-2 mb-2 filter-btn active" data-filter="all">All</button>
+                    <button class="btn btn-sm btn-outline-primary me-2 mb-2 filter-btn" data-filter="Award Ceremonies">Award Ceremonies</button>
+                    <button class="btn btn-sm btn-outline-primary me-2 mb-2 filter-btn" data-filter="Project Demos">Project Demos</button>
+                    <button class="btn btn-sm btn-outline-primary me-2 mb-2 filter-btn" data-filter="Hackathons">Hackathons</button>
+                    <button class="btn btn-sm btn-outline-primary me-2 mb-2 filter-btn" data-filter="Team Events">Team Events</button>
+                    <button class="btn btn-sm btn-outline-primary me-2 mb-2 filter-btn" data-filter="Presentations">Presentations</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            {% for image in images %}
+            <div class="col-md-6 col-lg-4 mb-4 project-item {{ image.category }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="gallery-item">
+                            <img src="{{ image.image_url }}" alt="{{ image.title }}" class="img-fluid w-100 rounded gallery-img" style="height: 200px; object-fit: cover;">
+                            <div class="gallery-overlay">
+                                <h5>{{ image.title }}</h5>
+                                <p class="mb-0">{{ image.description }}</p>
+                            </div>
+                        </div>
+                        <h5 class="mt-3">{{ image.title }}</h5>
+                        <p class="text-muted mb-2"><i class="fas fa-tag me-2"></i>{{ image.category }}</p>
+                        <p>{{ image.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
