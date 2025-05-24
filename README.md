@@ -59,4 +59,11 @@ This project is organized as follows:
 💼 GitHub: Srinivasaraot20
 
 
+![image](https://github.com/user-attachments/assets/54794deb-5a2f-4386-9d4d-1344c249655f)
+![image](https://github.com/user-attachments/assets/cb64694a-b349-4103-b695-0651758e4875)
+![image](https://github.com/user-attachments/assets/dfa823f1-4e37-48de-b1e5-77b69359f0e8)
+
+
+
+
 
